@@ -100,7 +100,7 @@ public class SnL{
         }
         System.out.println("Your Game Mode is: " + getGameMode() + ", Enjoy Playing!");
         System.out.println("");
-//        SoundPlayer.playSound("src//start.wav");
+        SoundPlayer.playSound("src//start.wav");
 
 
         //object instantiation
