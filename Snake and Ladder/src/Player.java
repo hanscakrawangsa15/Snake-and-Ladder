@@ -5,11 +5,11 @@
  * Group Capstone Project: Snake and Ladder Game
  * -----------------------------------------------------
  * Class    : D
- * Group    : XX
+ * Group    : 05
  * Members  :
- * 1. Student ID - Full Name
- * 2. Student ID - Full Name
- * 3. Student ID - Full Name
+ * 1. 5026231130 - Hans Christian Cakrawangsa  
+ * 2. 5026231145 - Abrorus Shobah
+ * 3. 5026231161 - Muhammad Daniel Alfarisi 
  * ------------------------------------------------------
  */
 import java.io.File;
