@@ -7,9 +7,9 @@
  * Class    : D
  * Group    : 05
  * Members  :
- * 1. 5026231130 - Hans Christian Cakrawangsa
+ * 1. 5026231130 - Hans Christian Cakrawangsa  
  * 2. 5026231145 - Abrorus Shobah
- * 3. 50262311
+ * 3. 5026231161 - Muhammad Daniel Alfarisi 
  * ------------------------------------------------------
  */
 
