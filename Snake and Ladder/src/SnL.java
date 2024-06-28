@@ -64,21 +64,6 @@ public class SnL{
     public String getGameMode(){
         return this.gameMode;
     }
-    public void addRollDiceSoundEffect(String soundFileName){
-        try{
-            File soundFile = new File(soundFileName);
-            AudioInputStream audioStream = AudioSystem.getAudioInputStream(soundFile);
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioStream);
-            clip.start();
-        }catch(UnsupportedAudioFileException e){
-            System.out.println("UnsupportedAudioFileException" + e.getMessage());
-        }catch(IOException e){
-            System.out.println("IOException" + e.getMessage());
-        }catch(LineUnavailableException e){
-            System.out.println("LineUnavailableException" + e.getMessage());
-        }
-    }
 
     public void play(){
         Player playerInTurn;
@@ -100,7 +85,7 @@ public class SnL{
         }
         System.out.println("Your Game Mode is: " + getGameMode() + ", Enjoy Playing!");
         System.out.println("");
-        SoundPlayer.playSound("src//start.wav");
+        SoundPlayer.playSound("src//start.wav"); // Menambahkan efek suara game saat dimulai
 
 
         //object instantiation
@@ -129,7 +114,7 @@ public class SnL{
                 int x = 0;
                 if (enter.isEmpty()) {
                     x = playerInTurn.rollDice();
-                    SoundPlayer.playSound("src//rolldice.wav");
+                    SoundPlayer.playSound("src//rolldice.wav"); //Menambahkan Efek suara saat mengocok dadu
                 }
                 System.out.println("Dice Number : "+ x);
                 movePlayerAround(playerInTurn, x);
@@ -138,7 +123,7 @@ public class SnL{
             } while (extraRoll);
         }
         while (getGameStatus()!=2);
-        SoundPlayer.playSound("src//gameover.wav");
+        SoundPlayer.playSound("src//gameover.wav"); //Menambahkan sound effect game over ketika game selesai dimainkan
         System.out.println("the  winner is:"+ playerInTurn.getName());
         if (bombPositions.isEmpty()) {
             System.out.println("The bomb was at position: " + bombPositions);
@@ -218,7 +203,7 @@ public class SnL{
         for (Ladder l : this.ladders) {
             if (p.getPosition() == l.getBottomPosition()) {
                 System.out.println(ANSI_GREEN + p.getName() + " you got Ladder from: " + l.getBottomPosition() + " To: " + l.getTopPosition() + ANSI_RESET);
-                SoundPlayer.playSound("src//climbingstairs.wav");
+                SoundPlayer.playSound("src//climbingstairs.wav"); // Menambahkan efek suara naik tangga ketika posisi naik tangga
                 p.setPosition(l.getTopPosition());
             }
         }
@@ -227,7 +212,7 @@ public class SnL{
                 if (p.getPosition() == s.getHeadPosition()) {
                     p.setPosition(s.getTailPosition());
                     System.out.println(ANSI_YELLOW + p.getName() + " you get snake head from " + s.getHeadPosition() + " slide down to " + s.getTailPosition() + ANSI_RESET);
-                    SoundPlayer.playSound("src//snakehiss.wav");
+                    SoundPlayer.playSound("src//snakehiss.wav"); // Menambahkan efek suara ular ketika terkena ular
                     if (this.gameMode.equals("unique")) {
                         extraRoll = true;
                         System.out.println(p.getName() + " keep your heads up, you get extra roll !!!");
@@ -240,11 +225,11 @@ public class SnL{
         if (this.gameMode.equals("unique") && bombPositions.contains(p.getPosition())) {
             System.out.println(ANSI_RED + p.getName() + " STEPPED ON THE BOMB! GAME OVER!" + ANSI_RESET);
             System.out.println(ANSI_RED + "The bombs were at positions: " + bombPositions + ANSI_RESET);
-            SoundPlayer.playSound("src//bomb.wav");
+            SoundPlayer.playSound("src//bomb.wav"); // Menambahkan efek suara bom ketika posisi terkena bom
             this.gameStatus = 2;  // End the game
             int playerWin = this.players.indexOf(p) == 0 ? 1 : 0;  // Determine the other player as winner
             System.out.println("The winner is: " + this.players.get(playerWin).getName());
-            SoundPlayer.playSound("src//gameover.wav");
+            SoundPlayer.playSound("src//gameover.wav"); 
             return ;
         }
 
