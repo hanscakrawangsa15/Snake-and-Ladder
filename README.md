@@ -1,4 +1,9 @@
-Hello!! This is us Group 5 From D Class This Snake and Ladder is to fullfil our last semester 2 Exam and this project is our best project.
+Hello!! This is us Group 5 From D Class 
+1. 5026231130 - Hans Christian Cakrawangsa
+2. 5026231145 - Abrorus Shobah
+3. 5026231161 - Muhammad Daniel Alfarisi
+
+This Snake and Ladder is to fullfil our last semester 2 Exam and this project is our best project.
 Our Snake and Ladder Project were equipped with several feature, such as :
 
 1. There are 3 modes that you can choose (easy, normal, unique) mode
